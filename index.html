@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <title>dc435</title>
+        <link rel="icon" type="image/png" href="beehive_dc435.png">
         <style>
             .typewriter h1 {
               font-family: monospace;/* Web-safe typewriter-like font */
               overflow: hidden;/* Ensures the content is not revealed until the animation */
-              border-right: .17em solid pink;/* The typewriter cursor */
+              border-right: .20em solid rgb(0, 255, 0);/* The typewriter cursor */
               white-space: nowrap;/* Keeps the content on a single line */
-              margin: 0 auto;/* Gives that scrolling effect as the typing happens */
+              margin: 0 auto; max-width:100%; /* Gives that scrolling effect as the typing happens */
+              text-align: center;
               letter-spacing: .17em;/* Adjust as needed */
               animation: typing 3.5s steps(30, end), blinking-cursor .5s step-end infinite;
             }
@@ -22,20 +24,30 @@
                 width: 100%
               }
             }
+            @keyframes blinking-cursor {
+             from,
+             to {
+                border-color: transparent
+            }
+            50% {
+            border-color: rgb(0, 255, 0);
+            }
+            }
             
           </style>
+          
           <style>
                 .typewriter h2 {
                   font-family: monospace;/* Web-safe typewriter-like font */
                   letter-spacing: .17em;/* Adjust as needed */
-                  
+                  margin-bottom: 0;
                 }
            </style>
              <style>
                 .typewriter h3 {
                   font-family: monospace;/* Web-safe typewriter-like font */
                   letter-spacing: .17em;/* Adjust as needed */
-                  
+                  margin-top: 0;
                 }
            </style>
              <style>
@@ -45,6 +57,25 @@
                   
                 }
            </style>
+           <style>
+            .box {
+              padding: 10px;
+            }
+          </style>
+              <style>
+                .footer {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 50px;
+                  
+                }
+                .logo {
+                  height: 50px;
+                  margin-right: 10px;
+                }
+              </style>
+             
     </head>
     
     <body{ margin:0 auto; }>
@@ -52,35 +83,44 @@
         <body style="background-color:black;">
             
         <font color="green;">     
+        <div class="box">    
         <div class="typewriter">    
         <p> 
             <img src="dc435logo.PNG" alt="dc435 logo" style="display:block; margin: 0 auto; max-width:100%; height:auto;">
         </p>
-            <h1>upcoming event info</h1><h3>located on <a href="http://discord.dc435.org">discord</a> </h3>
+            <h1>upcoming event info</h1>
+            <p style="text-align: center; font-family: monospace; font-size: 25px; letter-spacing: .17em;">on <a href="http://discord.dc435.org" style="color: white;">discord</a></p>
             <br>
-            <br>    
+               
             <h2><u>when</u></h2>
                 <h3>dc435 meets the 1st thursday of every month</h3>
             </h2>
             <br>
             <h2><u>time</u></h2>
-                <h3>doors open at 6:30pm and we start at 7:00pm</h3>
+                <h3>7:00pm, doors open at 6:30pm</h3>
             </h2>
             <br>
             <h2><u>location</u></h2>
-                <h3>bridgerland technical college campus located at 1301 N 600 W, logan, ut 84321 - room 840</h3>
-            <br>
-            <h2><u>what is defcon 435 or dc435</u></h2>
+                <h3>bridgerland technical college campus located at <a href="https://duckduckgo.com/?q=1301+N+600+W%2C+logan%2C+ut+84321&ia=web&atb=v344-1&iaxm=maps" style="color: white;">1301 N 600 W, logan, ut 84321 - room 840</a></h3>
+                <br>
+            <h2><u>what is dc435</u></h2>
                 <h3><li>dc435 is an official defcon group in cache valley, ut focused on infosec</li> <li>dc435 is made up of students, professionals, researchers, and hobbyists</li><li>dc435 is always free and open to everyone regardless of skill, age, career, gender, etc.</li> <li>dc435 is community-driven and all events are donated through time from members</li><li>if you want to present or request topics, post in preso_discussion on discord</li></h3>
             <br>
                 <h2><u>how do i become a member</u></h2>
                 <h3>show up! participate, interact, learn, teach etc. that's it, welcome to dc435</h3>
             </h2>
             <br>
-        <h3><u>code of conduct</u></h3>
-            <h4><li>we have NO TOLERANCE for physical/verbal/sexual harassment</li><li>if someone asks you to stop, stop</li><li>we reserve the right to ask any individual to leave the gathering at any time for any reason</li><li>as our gathering place is donated, no illegal drug use or drinking is permitted</li><li>minors should be accompanied by their parent(s) or guardian(s)</li></h4>
-        
+        <h2><u>code of conduct</u></h2>
+            <h3><li>we have NO TOLERANCE for physical/verbal/sexual harassment</li><li>if someone asks you to stop, stop</li><li>we reserve the right to ask any individual to leave the gathering at any time for any reason</li><li>as our gathering place is donated, no illegal drug use or drinking is permitted</li><li>minors should be accompanied by their parent(s) or guardian(s)</li></h3>
+            <footer class="footer">
+                
+                <p>&copy; <script>document.write(new Date().getFullYear());</script></p>
+                <img class="logo" src="beehive_dc435.png" alt="dc435 logo">
+                
+              </footer>
         </div>
+        </div>
+   
         </body>
 </html>
 
