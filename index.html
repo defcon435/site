@@ -57,6 +57,19 @@
                   
                 }
            </style>
+            <style>
+                body {
+                  background-color: rgb(0, 0, 0);
+                  
+                }
+                p {
+                     color: rgb(0, 255, 0);
+                 }
+                     h1, h2, h3 {
+                       color: rgb(0, 255, 0);
+              }
+              </style> 
+
            <style>
             .box {
               padding: 10px;
@@ -75,23 +88,68 @@
                   margin-right: 10px;
                 }
               </style>
-             
+              <style>
+                .events {
+                  width: 70%;
+                  margin: auto;
+                  text-align: center;
+                  font-family: monospace;/* Web-safe typewriter-like font */
+                  letter-spacing: .17em;/* Adjust as needed */
+                  font-size: 15px;
+                }
+              </style>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script>
+              function loadCalendar() {
+               var calendarId = "9e332c28feb06df30c03c6ab5a84b60172aa3c5b9bb57b36ffb3f0657e0ce09a@group.calendar.google.com";
+               var apiKey = "AIzaSyCMfg8XF9ai4rIRw6cob40NXGOtC4oBqcI" //secret key in the clear... come on 
+               var calendarUrl = "https://www.googleapis.com/calendar/v3/calendars/" + 
+                 calendarId + 
+                 "/events?key=" +
+                 apiKey + 
+                 "&maxResults=5&singleEvents=true&orderBy=startTime"
+            
+                    $.get(calendarUrl, function(data) {
+                      if (data.items) {
+                        var events = data.items;
+                        for (var i = 0; i < events.length; i++) {
+                          var event = events[i];
+                          var eventDate = new Date(event.start.dateTime || event.start.date);
+                          $("#events").append(
+                            "<p>" +
+                              event.summary +
+                              " - " +
+                              eventDate.toLocaleDateString() +
+                              "</p>"
+                          );
+                        }
+                      } else {
+                        $("#events").append("<p>No upcoming events found.</p>");
+                      }
+                    });
+                  }
+                </script> 
     </head>
     
-    <body{ margin:0 auto; }>
-         
-        <body style="background-color:black;">
+     <body onload="loadCalendar()";>   
+       
             
-        <font color="green;">     
         <div class="box">    
         <div class="typewriter">    
+      
         <p> 
             <img src="dc435logo.PNG" alt="dc435 logo" style="display:block; margin: 0 auto; max-width:100%; height:auto;">
         </p>
-            <h1>upcoming event info</h1>
-            <p style="text-align: center; font-family: monospace; font-size: 25px; letter-spacing: .17em;">on <a href="https://discord.dc435.org" style="color: white;">discord</a></p>
+            <h1>upcoming events</h1>
+        <div class="events">
+            <div id="events"></div>
+        </div>
+            <p style="text-align: center; font-family: monospace; font-size: 25px; letter-spacing: .17em;">details on <a href="https://discord.dc435.org" style="color: white;">discord</a></p>
             <br>
-               
+            
+           
+        
+                   
             <h2><u>when</u></h2>
                 <h3>dc435 meets the 1st thursday of every month</h3>
             </h2>
@@ -120,18 +178,10 @@
               </footer>
         </div>
         </div>
+        
    
         </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
 
