@@ -129,6 +129,20 @@
                     });
                   }
                 </script> 
+                <script type="text/javascript">
+                var eGJhbnp2Keys = [];
+                var eGJhbnp2Code = '38,38,40,40,37,39,37,39,66,65';
+                var winMessage = 'bGJoIG5lciBuIDEzMzcgdW5weG1iZQ==';
+              
+                document.addEventListener('keydown', function(e) {
+                  eGJhbnp2Keys.push(e.keyCode);
+              
+                  if (eGJhbnp2Keys.toString().indexOf(eGJhbnp2Code) >= 0) {
+                    alert(winMessage);
+                    eGJhbnp2Keys = [];
+                  }
+                });
+              </script>
     </head>
     
      <body onload="loadCalendar()";>   
