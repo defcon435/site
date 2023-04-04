@@ -83,10 +83,7 @@
                   height: 50px;
                   
                 }
-                .logo {
-                  height: 50px;
-                  margin-right: 10px;
-                }
+                
               </style>
               <style>
                 .events {
@@ -98,6 +95,9 @@
                   font-size: 15px;
                 }
               </style>
+              <div id="matrix" style="display: none; position: fixed; top: 0; left: 0; z-index: 9999; width: 100%; height: 100%; background-color: black;">
+                <iframe width= 100% height= 100% src="https://www.youtube-nocookie.com/embed/UxqUIZ6kBTI?controls=0" title="rabbit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <script>
               function loadCalendar() {
@@ -187,8 +187,23 @@
             <footer class="footer">
                 
                 <p>&copy; <script>document.write(new Date().getFullYear());</script></p>
-                <img class="logo" src="beehive_dc435.png" alt="dc435 logo">
+                <img id= "white-rabbit" src="beehive_dc435.png" alt="dc435 logo" style="max-width: 100%; height: 50px; margin-right: 10px;">
+            
                 
+                
+                
+                <script>
+                  var matrix = document.getElementById('matrix');
+                  var rabbit = document.getElementById('white-rabbit');
+                  
+                  rabbit.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    matrix.style.display = 'block';
+                    rabbit.style.display = 'none';
+                    var iframe = matrix.getElementsByTagName('iframe')[0];
+                    iframe.src += '&autoplay=1';
+                  });
+                </script>
               </footer>
         </div>
         </div>
