@@ -143,6 +143,27 @@
                   }
                 });
               </script>
+        
+              <script>
+                function doBarrelRoll() {
+                  var element = document.getElementsByTagName('body')[0];
+                  element.style.transform = 'rotate(360deg)';
+                  element.style.transition = 'transform 3s';
+                  setTimeout(function() {
+                    element.style.transform = '';
+                    element.style.transition = '';
+                  }, 3000);
+                }
+              
+                document.addEventListener('keydown', function(event) {
+                  if (event.code === 'KeyR') {
+                    var isShiftPressed = event.shiftKey;
+                    if (isShiftPressed) {
+                      doBarrelRoll();
+                    }
+                  }
+                });
+              </script>
     </head>
     
      <body onload="loadCalendar()";>   
