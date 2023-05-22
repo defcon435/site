@@ -102,12 +102,16 @@
             <script>
               function loadCalendar() {
                var calendarId = "9e332c28feb06df30c03c6ab5a84b60172aa3c5b9bb57b36ffb3f0657e0ce09a@group.calendar.google.com";
-               var apiKey = "AIzaSyCMfg8XF9ai4rIRw6cob40NXGOtC4oBqcI" //secret key in the clear... come on 
+               var apiKey = "AIzaSyCMfg8XF9ai4rIRw6cob40NXGOtC4oBqcI"; //secret key in the clear... come on 
+               var currentDate = new Date();
+               currentDate.setHours(currentDate.getHours() - 2); // show last meeting if it started less than 2h ago
+               var minDate = currentDate.toISOString();
                var calendarUrl = "https://www.googleapis.com/calendar/v3/calendars/" + 
                  calendarId + 
                  "/events?key=" +
                  apiKey + 
-                 "&maxResults=5&singleEvents=true&orderBy=startTime"
+                 "&maxResults=5&singleEvents=true&orderBy=startTime&timeMin=" +
+                 minDate;
             
                     $.get(calendarUrl, function(data) {
                       if (data.items) {
